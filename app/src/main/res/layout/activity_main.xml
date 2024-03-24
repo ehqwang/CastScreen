@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#10ddff"
+        android:gravity="center"
+        android:text="开始服务"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_start_recorder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#10ddff"
+        android:gravity="center"
+        android:text="开始录制"
+        android:visibility="gone"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/tv_stop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_stop" />
+
+    <TextView
+        android:id="@+id/tv_stop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="#10ddff"
+        android:gravity="center"
+        android:text="结束录制"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/tv_start_recorder"
+        app:layout_constraintTop_toBottomOf="@+id/tv_start"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地址"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stop"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_path"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_service_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ip"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="服务端"
+        />
+
+    <TextView
+        android:id="@+id/tv_service"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="#10ddff"
+        app:layout_constraintTop_toBottomOf="@+id/tv_service_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="开启服务"
+        />
+
+    <TextView
+        android:id="@+id/tv_service_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="#10ddff"
+        app:layout_constraintTop_toTopOf="@+id/tv_service"
+        app:layout_constraintStart_toEndOf="@+id/tv_service"
+        android:layout_marginStart="20dp"
+        android:text="发送消息给客户端"
+        />
+
+    <TextView
+        android:id="@+id/tv_client_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_service"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="客户端"
+        />
+
+    <TextView
+        android:id="@+id/tv_client"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="#10ddff"
+        app:layout_constraintTop_toBottomOf="@+id/tv_client_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="连接服务"
+        />
+
+    <EditText
+        android:id="@+id/et_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv_client"
+        app:layout_constraintTop_toTopOf="@+id/tv_client"
+        android:text="10.168.1.213"
+        />
+
+    <TextView
+        android:id="@+id/tv_client_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="#10ddff"
+        app:layout_constraintTop_toTopOf="@+id/tv_client"
+        app:layout_constraintStart_toEndOf="@+id/et_client"
+        android:layout_marginStart="20dp"
+        android:text="发送消息给服务端"
+        />
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_client"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_client"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="跳转到投屏页面"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#10ddff"
+        />
+
+    <TextView
+        android:id="@+id/tv_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="跳转到播放页面"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#10ddff"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
